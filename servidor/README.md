@@ -9,7 +9,7 @@
 
 
     $ cd ionic-express/servidor
-
+    
     $ npm install
 
 
@@ -72,7 +72,9 @@ retorna:
 
     {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw"}
 
-    PAYLOAD do token
+
+PAYLOAD do token
+
 
     {"id": 1, "name": "Novo Nome", "email": "teste@gmail.com", "iat": 1461755060}
 
