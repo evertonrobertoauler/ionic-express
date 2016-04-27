@@ -60,7 +60,7 @@
 
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
 
-    {"name": "Éverton Auler", "password": "adsafffasf"}
+    {"name": "Novo Nome", "password": "adsafffasf"}
 
     retorna:
 
