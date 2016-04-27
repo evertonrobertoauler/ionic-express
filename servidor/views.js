@@ -32,8 +32,9 @@ function insertUserView(req, res) {
 function updateUserView(req, res) {
   models.Users
     .update(req.body, {fields: ['name', 'password'], where: {id: req.user.id}})
-    .then(function (user) {
-      res.send({token: auth.createJwt(user)});
+    .then(function () {
+      req.user.name = req.body.name;
+      res.send({token: auth.createJwt(req.user)});
     })
     .catch(errorView(req, res));
 }

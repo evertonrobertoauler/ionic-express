@@ -32,9 +32,11 @@
 
     {"name": "Nome", "email": "teste@gmail.com", "password": "senhasegura"}
 
-    retorna um JWT (https://jwt.io/):
 
-    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI"}
+retorna um [JWT](https://jwt.io/):
+
+
+    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vbWUiLCJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTc1NTAxM30.UnUZmZcEWtZqzygRwIv2x6UV9DXOJ3sYzWGR5l2RoGY"}
 
 
 ### Login
@@ -46,9 +48,11 @@
 
     {"username": "teste@gmail.com", "password": "senhasegura"}
 
-    retorna:
 
-    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI"}
+retorna:
+
+
+    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vbWUiLCJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTc1NTA2MH0.Du35ABQjYcTalshmGVf6x9KqA2K3t_I3Dt_2xFf052U"}
 
 
 ### Atualizar Cadastro
@@ -58,13 +62,19 @@
 
     http://localhost:3000/user
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vbWUiLCJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTc1NTA2MH0.Du35ABQjYcTalshmGVf6x9KqA2K3t_I3Dt_2xFf052U
 
-    {"name": "Novo Nome", "password": "adsafffasf"}
+    {"name": "Novo Nome", "password": "novasenhasegura"}
 
-    retorna:
 
-    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI"}
+retorna:
+
+
+    {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw"}
+
+    PAYLOAD do token
+
+    {"id": 1, "name": "Novo Nome", "email": "teste@gmail.com", "iat": 1461755060}
 
 
 ### Inserindo uma Playlist
@@ -74,11 +84,13 @@
 
     http://localhost:3000/playlists
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw
 
     {"title": "Teste"}
 
-    retorna:
+
+retorna:
+
 
     {"id": 1, "title": "Teste"}
 
@@ -90,11 +102,13 @@
 
     http://localhost:3000/playlists/1
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw
 
     {"title": "Teste Update"}
 
-    retorna:
+
+retorna:
+
 
     {"id": 1, "title": "Teste Update"}
 
@@ -106,9 +120,11 @@
 
     http://localhost:3000/playlists
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw
 
-    retorna:
+
+retorna:
+
 
     [{"id": 1, "title": "Teste Update"}]
 
@@ -120,9 +136,11 @@
 
     http://localhost:3000/playlists/1
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw
 
-    retorna:
+
+retorna:
+
 
     {"id": 1, "title": "Teste Update"}
 
@@ -134,5 +152,5 @@
 
     http://localhost:3000/playlists/1
 
-    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik5vdm8gTm9tZSIsImVtYWlsIjoidGVzdGVAZ21haWwuY29tIiwiaWF0IjoxNDYxNzU1NTIwfQ.U-UZiYa6cdBYC4TKs_zaIZF3f12liKfSFP3bBlgAEJw
 
