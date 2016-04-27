@@ -1,14 +1,15 @@
-## Servidor implementado com Node.js e Express (http://expressjs.com/)
+## Servidor implementado com Node.js e [Express](http://expressjs.com/)
 
 # Instalando dependencias
 
-- Instale Node.js versão Latest (https://nodejs.org/en/)
-- Instale GIT (https://git-scm.com/)
+- Instale [Node.js versão Latest](https://nodejs.org/en/)
+- Instale [GIT](https://git-scm.com/)
 - Clone este repositório ($ git clone https://github.com/evertonrobertoauler/ionic-express)
 - Instale as dependencias locais da aplicação 
 
 
     $ cd ionic-express/servidor
+
     $ npm install
 
 
@@ -20,13 +21,15 @@
 
 # Testar o Servidor 
 
-- Sugiro a Extension Postman do Google Chrome (https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+- Sugiro a Extension do Google Chrome [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
 - Cadastro
 
 
     POST 
+
     http://localhost:3000/signup 
+
     {"name": "Nome", "email": "teste@gmail.com", "password": "senhasegura"}
 
     retorna um JWT (https://jwt.io/):
@@ -38,7 +41,9 @@
 
 
     POST
+
     http://localhost:3000/signin
+
     {"username": "teste@gmail.com", "password": "senhasegura"}
 
     retorna:
@@ -50,8 +55,11 @@
 
 
     POST
+
     http://localhost:3000/user
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+
     {"name": "Éverton Auler", "password": "adsafffasf"}
 
     retorna:
@@ -63,8 +71,11 @@
 
 
     POST
+
     http://localhost:3000/playlists
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+
     {"title": "Teste"}
 
     retorna:
@@ -76,8 +87,11 @@
 
 
     POST
+
     http://localhost:3000/playlists/1
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
+
     {"title": "Teste Update"}
 
     retorna:
@@ -89,7 +103,9 @@
 
 
     GET
+
     http://localhost:3000/playlists
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
 
     retorna:
@@ -101,7 +117,9 @@
 
 
     GET
+
     http://localhost:3000/playlists/1
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
 
     retorna:
@@ -113,6 +131,8 @@
 
 
     DELETE
+
     http://localhost:3000/playlists/1
+
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IsOJdmVydG9uIEF1bGVyIiwiZW1haWwiOiJldmVydGFkZm9uQGdtYWlsLmNvbSIsImlhdCI6MTQ2MTcyNjY5OH0.RwaHKKyqO3JZjhCLw-WULtf8PRLOIVdJZbLq9Fn1SoI
 
