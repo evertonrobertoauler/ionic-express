@@ -5,7 +5,7 @@ module.exports = {
   },
   db: {
     dialect: 'sqlite',
-    logging: true,
+    logging: console.log.bind(console),
     storage: 'playlist.sqlite'
   }
 };
