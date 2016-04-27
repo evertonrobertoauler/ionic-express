@@ -29,7 +29,7 @@ function createJwt(user) {
 
 function encryptPassword(password) {
   if (password && password.length > 6)
-    return CryptoJS.HmacSHA3(password, config.auth.secret) .toString();
+    return CryptoJS.HmacSHA3(password, config.auth.secret).toString();
 }
 
 function validatePassword(plainPassword, encryptedPassword) {
@@ -59,6 +59,6 @@ module.exports = {
   passport: passport,
   createJwt: createJwt,
   encryptPassword: encryptPassword,
-  login: passport.authenticate('local', { session: false }),
-  loginRequired: passport.authenticate('bearer', { session: false })
+  login: passport.authenticate('local', {session: false}),
+  loginRequired: passport.authenticate('bearer', {session: false})
 };
