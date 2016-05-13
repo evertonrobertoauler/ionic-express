@@ -43,11 +43,11 @@ angular
     };
   })
 
-  .controller('PlaylistsCtrl', function ($scope, PlaylistsServices) {
+  .controller('PlaylistsCtrl', function ($scope, PlaylistsService) {
 
     $scope.playlists = [];
 
-    PlaylistsServices
+    PlaylistsService
       .getPlaylists()
       .then(function (playlists) {
         $scope.playlists = playlists;

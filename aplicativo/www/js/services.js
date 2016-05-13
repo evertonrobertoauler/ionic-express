@@ -2,13 +2,14 @@ angular
 
   .module('starter.services', [])
 
-  .service('PlaylistsServices', function (API_URL, $http) {
+  .service('PlaylistsService', function (API_URL, $http) {
 
     var vm = this;
 
     vm.getPlaylists = getPlaylists;
     vm.getPlaylist = getPlaylist;
-    vm.savePlaylist = savePlaylist;
+    vm.insertPlaylist = insertPlaylist;
+    vm.updatePlaylist = updatePlaylist;
     vm.deletePlaylist = deletePlaylist;
 
     function getPlaylists() {
@@ -27,9 +28,17 @@ angular
         });
     }
 
-    function savePlaylist(playlist) {
+    function insertPlaylist(playlist) {
       return $http
         .post(API_URL + '/playlists', playlist)
+        .then(function (res) {
+          return res.data;
+        });
+    }
+
+    function updatePlaylist(id, playlist) {
+      return $http
+        .post(API_URL + '/playlists/' + id, playlist)
         .then(function (res) {
           return res.data;
         });
