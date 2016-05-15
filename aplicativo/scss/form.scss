@@ -1,0 +1,32 @@
+.validation {
+  margin: 0;
+  position: relative;
+  font-size: 14px;
+
+  li {
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    right: 16px;
+    top: -10px;
+    text-align: right;
+    font-weight: bold;
+    padding: 0 5px;
+    width: calc(100% - 16px);
+    color: $assertive;
+    transition: all ease-in 0.2s;
+    opacity: 1;
+    transition-delay: 0s;
+    border-bottom: solid $assertive;
+  }
+
+  li.ng-enter {
+    opacity: 0;
+    top: 0;
+  }
+
+  li.ng-leave {
+    transition: all ease-in 0s;
+    opacity: 0;
+  }
+}
