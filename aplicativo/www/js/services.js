@@ -60,15 +60,14 @@ angular
       return config;
     }
 
-    function responseError(rejection, config) {
-      console.log(rejection, config);
+    function responseError(rejection) {
 
-      if (rejection.status === 401) {
+      if (rejection.status === 401 && !/\/signin$/.test(rejection.config.url)) {
         ieAuth.eraseAuth();
         return ieAuth.addPendingRequests(rejection.config);
       }
 
-      return $q.reject(rejection);
+      return $q.reject(rejection.data);
     }
 
   })

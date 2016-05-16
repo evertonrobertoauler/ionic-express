@@ -11,20 +11,32 @@ function errorView(req, res) {
       res.status(404).send({error: error.message});
     } else {
       console.error(error);
-      res.status(400).send({error: error.errors || error.message || 'Bad request!'});
+      res.status(400).send({error: error.message || error});
     }
   }
 }
 
 function getUserView(req, res) {
-  res.send({token: auth.createJwt(req.user)});
+  res.send(auth.createJwtResponse(req.user));
 }
 
 function insertUserView(req, res) {
   models.Users
     .create(req.body, {fields: ['name', 'email', 'password']})
     .then(function (user) {
-      res.send({token: auth.createJwt(user)});
+      res.send(auth.createJwtResponse(user));
+    })
+    .catch(function(error) {
+      if (Array.isArray(error.errors)) {
+        var dbError = error.errors[0];
+        if (dbError.type === 'unique violation') {
+          throw ('Email \'' + dbError.value + '\' is already registered!');
+        } else {
+          throw dbError.message;
+        }
+      }
+
+      throw error;
     })
     .catch(errorView(req, res));
 }
@@ -34,7 +46,7 @@ function updateUserView(req, res) {
     .update(req.body, {fields: ['name', 'password'], where: {id: req.user.id}})
     .then(function () {
       req.user.name = req.body.name;
-      res.send({token: auth.createJwt(req.user)});
+      res.send(auth.createJwtResponse(req.user));
     })
     .catch(errorView(req, res));
 }

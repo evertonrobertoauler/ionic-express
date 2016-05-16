@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in components.js
 angular
 
-  .module('starter', ['ionic', 'ngStorage', 'ngFabForm', 'starter.components', 'starter.services'])
+  .module('starter', ['ionic', 'ngCordova', 'ngStorage', 'ngFabForm', 'starter.components', 'starter.services'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

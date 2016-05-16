@@ -62,14 +62,14 @@ angular
         } else {
           promise = ieUserService.signup($ctrl.user)
         }
-        
+
         promise
           .then(function (user) {
             console.log(user);
             $ctrl.modal.hide();
           })
-          .catch(function (error) {
-            console.log(error);
+          .catch(function (rejection) {
+            $ctrl.error = rejection.error;
           });
       }
     }

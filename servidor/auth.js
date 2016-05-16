@@ -17,14 +17,14 @@ function corsMiddleware(req, res, next) {
   req.method === 'OPTIONS' ? res.end() : next();
 }
 
-function createJwt(user) {
+function createJwtResponse(user) {
   var payload = {
     id: user.id,
     name: user.name,
     email: user.email
   };
 
-  return jwt.sign(payload, config.auth.secret);
+  return {token: jwt.sign(payload, config.auth.secret), user: payload};
 }
 
 function encryptPassword(password) {
@@ -54,11 +54,25 @@ passport.use(new BearerStrategy(function (token, done) {
   }
 }));
 
+function login(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+
+    if (err)
+      return next(err);
+
+    if (!user)
+      return res.status(404).send({error: 'Invalid email or password!'});
+
+    req.user = user;
+    next();
+  }, {session: false})(req, res, next);
+}
+
 module.exports = {
   corsMiddleware: corsMiddleware,
   passport: passport,
-  createJwt: createJwt,
+  createJwtResponse: createJwtResponse,
   encryptPassword: encryptPassword,
-  login: passport.authenticate('local', {session: false}),
+  login: login,
   loginRequired: passport.authenticate('bearer', {session: false})
 };
